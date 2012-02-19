@@ -221,7 +221,7 @@
         /**
          * @var string Mime type of the file
          */
-        uploadMime: 'image/png',
+        uploadMIME: 'image/png',
 
         /**
          * @var callback Before a rectangle has been drawn
@@ -387,8 +387,8 @@
 	 * @see http://api.jquery.com/jQuery.ajax/
 	 */
 	HTMLFeedback.upload = function(instance, extra) {
-		var imageMime = 'image/png';
 		var imageData = null;
+		var imageMime = instance.options.uploadMime;
 		var uploadName = instance.options.uploadName;
 
 		if (instance.options.useCanvas) instance.overlay.hide();
