@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    	
+        <!-- Begin HTMLFeedback -->
+        <link rel="stylesheet" type="text/css" href="css/htmlfeedback.css">    
+        <script type="text/javascript" src="js/html2canvas.js"></script>
+        <script type="text/javascript" src="../jquery.htmlfeedback.js"></script>
+        <!-- End HTMLFeedback -->
+        
+        <script type="text/javascript">
+    		$(document).ready(function() {
+    		    // Initialize
+    			$("body").htmlfeedback({
+    				onShow: function() {
+    					$("#htmlfeedback-close").show();
+						$("#htmlfeedback-container-more").show("fast").addClass("expanded");	
+
+    				},
+    				onHide: function() {
+    					$("#htmlfeedback-close").hide();
+						$("#htmlfeedback-container-more").hide("fast").removeClass("expanded");	
+    				},
+    				onPreRender: function() {
+    				    alert("A screenshot will now be rendered and uploaded to the server. Check the folder 'screenshots' afterwards.")
+    				    $("#htmlfeedback-container").hide();
+				    },
+				    onPostRender: function(canvas) {
+    				    $("#htmlfeedback-container").show();
+				    }
+    			});
+    			
+    			// Show or hide HTMLFeedback
+    			$("#htmlfeedback-more").click(function() {
+    				$("body").htmlfeedback("toggle");
+    			});
+    			
+    			// Reset HTMLFeedback when we reset the form
+    			$("#htmlfeedback-reset").click(function() {
+    				$("body").htmlfeedback("reset");
+    			});
+    			
+    			// Upload it to the server
+    			$("#htmlfeedback-form").submit(function(e) {
+    				e.preventDefault();
+    				
+    				$("body").htmlfeedback("upload", {
+    					data: {
+    						"description": $("#htmlfeedback-input-description").val()
+    					},
+    					url: $(this).prop("action"),
+    				});
+    			});
+    			
+    			// Change marker color
+    			$("input[name='marker']").change(function() {
+    				$("body").htmlfeedback('color', $("input[name='marker']:checked").val());	
+    			});
+    		});
+        </script>
+    </head>
+    <body>
+        <h1>Example PHP</h1>
+        
+        <p>
+            This example will allow you to draw several rectangles via a feedback tool below.
+        </p>
+        
+        <p>
+            When you click submit, a screenshot will be rendered and send to the server via
+            AJAX. A PHP script will then handle the data. Check the folder screenshots for the
+            PNG renderings.
+        </p>
+        
+        <p>
+            To get the code, view the source.
+        </p>
+        
+        <!-- Begin HTMLFeedback -->
+        <div id="htmlfeedback-container" class="unselectable">
+            <div id="htmlfeedback-more">
+                Send feedback
+
+                <div id="htmlfeedback-close">X</div>
+            </div>
+
+        	<div id="htmlfeedback-container-more">	    
+        		<p>
+        			Please give a short description of your feedback. You can also 
+    				highlight or blackout parts of the screen.
+        		</p>
+
+        		<form id="htmlfeedback-form" action="upload.php">
+        			<p>
+        			    <span>Marker:</span>
+        				<input type="radio" name="marker" value="rgba(255,255,255,0)" checked> White
+        				<input type="radio" name="marker" value="rgb(0,0,0)"> Black
+        				<input type="radio" name="marker" value="rgba(255,0,0,0.5)"> Red
+        				<input type="radio" name="marker" value="rgba(0,255,0,0.5)"> Green
+        				<input type="radio" name="marker" value="rgba(0,0,255,0.5)"> Blue
+        			</p>
+
+        			<p>
+        			    <span>Short description:</span>
+        			    <textarea name="description" id="htmlfeedback-input-description">I have no use</textarea>
+        			</p>
+
+        			<p>
+        				<input type="submit" id="htmlfeedback-submit" value="Send">
+        				<input type="reset" id="htmlfeedback-reset" value="Reset">				
+        			</p>
+        		</form>
+        	</div>	
+        </div>
+        <!-- End HTMLFeedback -->
+    </body>
+</html>
