@@ -25,9 +25,3 @@ HTMLFeedback is tested in:
 * iOS 5.1
 
 HTMLFeedback is Beta, so please help me find bugs!
-
-## What's next
-
-* See [[Installation]] for the installation instructions
-* Check [[HowToUse]] for a quick overview of the functions
-* For uploading see [[UploadingScreenshots]]
