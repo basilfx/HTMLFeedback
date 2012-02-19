@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    	
+        <!-- Begin HTMLFeedback -->
+        <link rel="stylesheet" type="text/css" href="css/htmlfeedback.css">    
+        <script type="text/javascript" src="js/html2canvas.js"></script>
+        <script type="text/javascript" src="js/jquery.htmlfeedback.js"></script>
+        <!-- End HTMLFeedback -->
+        
+        <script type="text/javascript">
+    		$(document).ready(function() {
+    		    // Initialize
+    			$("body").htmlfeedback();
+    			
+    			// Show HTMLFeedback immediatly
+                $("body").htmlfeedback("show");
+    		});
+        </script>
+    </head>
+    <body>
+        <h1>Example 1</h1>
+
+        <p>
+            This is the most basic example of how to use HTMLFeedback.
+        </p>
+
+        <p>
+            Try to draw some rectangles with your mouse (or fingers on touch enabled devices).
+            If it works, you should see a black half transparant background and you can draw
+            white full transparant rectangles on it.
+        </p>
+        
+        <p>
+            View the source to get the code.
+        </p>
+    </body>
+</html>
