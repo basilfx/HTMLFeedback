@@ -12,7 +12,7 @@ The plugin does not include a GUI/Form. It only handles the logic to draw marker
 Two examples are available online. Check them out!
 
 * [Basic demo](http://basilfx.github.com/HTMLFeedback/basic.html)
-* [Advanced demo](http://basilfx.github.com/HTMLFeedback/basic.html)
+* [Advanced demo](http://basilfx.github.com/HTMLFeedback/advanced.html)
 * Upload demo requires PHP and is included in the folder 'examples'
 
 ## Compatibility
