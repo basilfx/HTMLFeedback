@@ -10,8 +10,6 @@
  * supporting the canvas element. You can disable the canvas element as an overlay
  * and use FlashCanvas to render the screen.
  *
- * The script has been tested under Firefox 8.0, Chrome 19.0, Safari 5.1 and iOS5.1.
- *
  * @author Bas Stottelaar <http://github.com/basilfx>
  * @version 1.0
  * @date 2012-02-18 (last update: 2012-12-30)
@@ -367,9 +365,9 @@
 		if (instance.options.useCanvas) instance.overlay.hide();
 		instance.options.onPreRender();
 
-		new html2canvas(instance.element[0], {
-    		ready: function(canvas) {
-    			instance.options.onPostRender(canvas.canvas)
+		html2canvas(instance.element, {
+    		onrendered: function(canvas) {
+    			instance.options.onPostRender(canvas)
 
     			// Show overlay again
 				if (instance.options.useCanvas) instance.overlay.show();
@@ -394,9 +392,8 @@
 		instance.options.onPreRender();
 
 		// Upload via XHR2
-		new html2canvas(instance.element[0], {
-    		ready: function(canvas) {
-    			var canvas = canvas.canvas;
+		html2canvas(instance.element, {
+    		onrendered: function(canvas) {
     			instance.options.onPostRender(canvas)
 
     			// Create the data
@@ -420,7 +417,7 @@
 					});
 
 					extra.data = form;
-				} else { // Or the old fashion way
+				} else { // Or the old-fashioned way
 					extra.data = extra.data || {};
 					extra.data[uploadName] = imageData;
 				}
