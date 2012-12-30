@@ -1,3 +1,7 @@
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
 div#htmlfeedback-container * {
 	margin: 0px;
 	padding: 0px;
