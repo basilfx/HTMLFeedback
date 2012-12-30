@@ -31,6 +31,7 @@
     				    
     				    var data = contextSource.getImageData(0, 0, contextSource.canvas.width, contextSource.canvas.height);
     				    contextDest.putImageData(data, 0, 0);
+                        $("#htmlfeedback-canvas").show();
 				    }
     			});
     			
@@ -54,6 +55,9 @@
     			$("input[name='marker']").change(function() {
     				$("body").htmlfeedback('color', $("input[name='marker']:checked").val());	
     			});
+
+                // Hide canvas 
+                $("#htmlfeedback-canvas").hide();
     		});
         </script>
     </head>
@@ -65,17 +69,27 @@
         </p>
         
         <p>
-            When you click submit, a screenshot will be rendered and output to the canvas element
+            When you click submit, a screenshot will be rendered to a canvas element (will appear below).
             below.
         </p>
         
         <p>
-            To get the code, view the source.
+            View the source to take a look at the code.
         </p>
         
-        <canvas id="a-canvas" style="border: 1px solid #000"></canvas>
+        <!-- Begin HTMLFeedback render result -->
+        <div id="htmlfeedback-canvas">
+            <h2>Result</h2>
+
+            <p>
+                Below is the rendered result.
+            </p>
+
+            <canvas id="a-canvas" style="border: 1px solid #000"></canvas>
+        </div>
+        <!-- End HTMLFeedback render result -->
         
-        <!-- Begin HTMLFeedback -->
+        <!-- Begin HTMLFeedback dialog -->
         <div id="htmlfeedback-container" class="unselectable">
             <div id="htmlfeedback-more">
                 Send feedback
@@ -106,6 +120,6 @@
         		</form>
         	</div>	
         </div>
-        <!-- End HTMLFeedback -->
+        <!-- End HTMLFeedback dialog -->
     </body>
 </html>
