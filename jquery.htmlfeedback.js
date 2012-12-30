@@ -14,7 +14,7 @@
  *
  * @author Bas Stottelaar <http://github.com/basilfx>
  * @version 1.0
- * @date 2012-02-18
+ * @date 2012-02-18 (last update: 2012-12-30)
  * @license MIT
  */
 (function($) {
@@ -31,8 +31,7 @@
 	var FormData = window.FormData || undefined;
 
 	/**
-	 * @var boolean Is true when the webpage is shown on a touch compatible
-	 * device.
+	 * @var boolean True when the webpage is shown on a touch compatible device.
 	 */
 	var isTouchDevice = "ontouchstart" in document.documentElement;
 
@@ -121,7 +120,7 @@
 	}
 
 	/**
-	 * Calculate the Pythagoras distance from element bounds
+	 * Calculate the Eucledian distance from elements boundings
 	 * @param element jQuery element
 	 * @return double Pythagoras distance
 	 */
@@ -169,7 +168,7 @@
 	}
 
 	/**
-	 * @var object The almighty HTMLFeedback object
+	 * @var object The 'almighty' HTMLFeedback object
 	 */
 	var HTMLFeedback = {}
 
@@ -268,7 +267,7 @@
 
 	/**
 	 * (Re)draw the canvas element and the markers.
-	 * @pa"stance HTMLFeedback object instance
+	 * @param instance HTMLFeedback object instance
 	 */
 	HTMLFeedback.paint = function(instance) {
 		// Draw overlay
