@@ -144,7 +144,8 @@
 
 		// CSS for the rectangles container
 		markers: {
-			"z-index": 5000
+			"z-index": 5000,
+            "background-color": "rgba(0,0,0,0)"
 		},
 
 		// CSS for the rectangles drawn
@@ -161,7 +162,7 @@
 			"-moz-user-select": "-moz-none",
 			"-khtml-user-select": "none",
 			"-webkit-user-select": "none",
-			"user-select": "none",
+			"user-select": "none"
 		}
 	}
 
@@ -260,7 +261,7 @@
         /**
          * @var callback Hide event
          */
-        onHide: function() {},
+        onHide: function() {}
     }
 
 	/**
@@ -468,12 +469,13 @@
 		markers.mousedown(function(e) {
 			rectangle = $("<div />").css({
 				"left" : e.pageX,
-				"top" : e.pageY,
+				"top" : e.pageY
 			}).css($.extend(
 				css.rectangle,
 				css.unselectable,
 				{ "background-color": instance.options.color }
 			));
+            //alert(instance.options.color);
 
 			var rectangleLeft = e.pageX;
 			var rectangleTop = e.pageY;

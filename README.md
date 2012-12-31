@@ -5,8 +5,8 @@ The plugin does not include a GUI/Form. It only handles the logic to draw marker
 
 ## Requirements
 
-* jQuery 1.7+
-* HTML2Canvas
+* jQuery 1.8.3+
+* HTML2Canvas v0.34
 
 ## Demos
 
@@ -24,6 +24,7 @@ HTMLFeedback is tested in:
 * Safari 5+
 * Firefox 8+
 * iOS 5+
+* IE9+ (preferably IE10)
 
 HTMLFeedback is Beta, so please help me find bugs!
 
