@@ -230,6 +230,7 @@
          * @var callback After a rectangle has been drawn
          */
         onRectangleEnd: function(rectangle, x, y) {
+        	rectangle.text("Click me to remove");
         	rectangle.mouseover(function(e) {
 				rectangle.text("Click me to remove");
 			});
