@@ -319,7 +319,7 @@
 	 * @param instance HTMLFeedback object instance
 	 */
 	HTMLFeedback.clear = function(instance) {
-		instance.markers.html();
+		instance.markers.html("");
 		HTMLFeedback.paint(instance);
 	}
 
